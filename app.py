@@ -21,4 +21,5 @@ def display():
     titles, imgs, genres = get_list(season, year, config.client_id)
     return render_template('display.html', titles=titles, imgs=imgs, len=len(titles), season=season, year=year, genres=genres)
 
-
+if __name__ == "__main__":
+    app.run(debug=True)
