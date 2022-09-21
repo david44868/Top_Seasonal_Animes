@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Recommendations</title>
+
+{% endblock %}
+
+{% block body %}
+    {% if titles != "" %}
+    <div class="list">
+        <div class="big_box">
+            <h1>{{season}} {{year}} Recommendations: </h1>
+            <div class="info">
+                {% for k in range(0, len) %}
+                    <div class="ani">
+                        <h2>{{ k + 1 }} ) {{ titles[k]}}</h2> 
+                        <h3>
+                            {% for genre in genres[k] %}
+                                {{genre['name']}} /
+                            {% endfor %}
+                        </h3>
+                        <img class="pic" src="{{ imgs[k] }}" width="200px" height="300px">
+                    </div> 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

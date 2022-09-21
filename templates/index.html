@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Anime Recommendations</title>
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="box">
+        <h1>Anime Recommendation?</h1>
+        <form action="{{ url_for('handle_data') }}" method="post">
+            <label for="user">Season:</label>
+            <select color="black" id="season" name="season">
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+                <option value="Winter">Winter</option>
+                <option value="Spring">Spring</option>
+            </select>
+            <label for="year">Year:</label>
+            <input type="number" min="1963" max="2022" value="2022" id="year" name="year" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
