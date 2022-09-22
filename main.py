@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 from py_files.api_connection import get_list
-import py_files.config # fix this
+import py_files.config as config # fix this
 
 app = Flask(__name__)
 
