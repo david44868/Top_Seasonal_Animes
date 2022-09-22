@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 from api_connection import get_list
-import config
+from .config import config
 
 app = Flask(__name__)
 
