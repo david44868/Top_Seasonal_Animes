@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect
 from api_connection import get_list
 # import config
+import os
 
 app = Flask(__name__)
 
@@ -18,7 +19,7 @@ def handle_data():
 def display():
     season = request.args.get('season', None)
     year = request.args.get('year', None)
-    titles, imgs, genres = get_list(season, year, client_id) # Get client id from MAL API 
+    titles, imgs, genres = get_list(season, year, os.environ.get('client_id')) # Get client id from MAL API 
     return render_template('display.html', titles=titles, imgs=imgs, len=len(titles), season=season, year=year, genres=genres)
 
 if __name__ == "__main__":
