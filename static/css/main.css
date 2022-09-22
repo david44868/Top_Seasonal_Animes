@@ -22,6 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .box {
@@ -120,4 +121,19 @@ h3 {
 .pic {
     margin-left: 8%;
     margin-top: 2.5%
+}
+
+.footer {
+    color: black;
+    font-weight: bold;
+    position: fixed; 
+    bottom: 0;
+    margin: 1.25em;
+}
+
+.scroll {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
 }
