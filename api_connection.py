@@ -3,11 +3,16 @@
 import requests, random
 
 def get_list(season, year, id):
-    api_url = "https://api.myanimelist.net/v2/anime/season/" + year + "/" + season.lower() + "?limit=20&sort=anime_num_list_users&fields=genres"
-    response = requests.get(api_url, headers = {
-        'X-MAL-CLIENT-ID': id
-        })
-
+    invalid = True
+    while invalid:
+        try:
+            api_url = "https://api.myanimelist.net/v2/anime/season/" + year + "/" + season.lower() + "?limit=20&sort=anime_num_list_users&fields=genres"
+            response = requests.get(api_url, headers = {
+                'X-MAL-CLIENT-ID': id
+                })
+            invalid = False
+        except requests.exceptions.RequestException as e:
+            print("API Requests Error.")
     list = response.json()
     response.close()
 
