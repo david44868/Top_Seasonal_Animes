@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 from api_connection import get_list
-from config import get_id
+# import config
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ def handle_data():
 def display():
     season = request.args.get('season', None)
     year = request.args.get('year', None)
-    titles, imgs, genres = get_list(season, year, get_id())
+    titles, imgs, genres = get_list(season, year, client_id)
     return render_template('display.html', titles=titles, imgs=imgs, len=len(titles), season=season, year=year, genres=genres)
 
 if __name__ == "__main__":
