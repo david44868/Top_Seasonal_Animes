@@ -18,7 +18,7 @@ def handle_data():
 def display():
     season = request.args.get('season', None)
     year = request.args.get('year', None)
-    titles, imgs, genres = get_list(season, year, 'a6fa49d51d79c434cb0212077a0103a0') # Get client id from MAL API 
+    titles, imgs, genres = get_list(season, year, client_id) # Get client id from MAL API 
     return render_template('display.html', titles=titles, imgs=imgs, len=len(titles), season=season, year=year, genres=genres)
 
 if __name__ == "__main__":
