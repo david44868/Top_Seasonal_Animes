@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 from api_connection import get_list
-from . import config # fix this
+import config # fix this
 
 app = Flask(__name__)
 
