@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect
 from api_connection import get_list
 import config
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates', static_folder="../static")
 
 @app.route('/')
 def index():
